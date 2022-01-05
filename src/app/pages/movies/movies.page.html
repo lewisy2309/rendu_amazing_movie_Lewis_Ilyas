@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>AmazingMovie</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-content>
+    <ion-list>
+      <ion-item ion-item *ngFor="let result of results ">
+        {{ result.title}}
+
+        <ion-button [routerLink]="result.id" >détail</ion-button>
+      </ion-item >
+    </ion-list>
+
+    </ion-content>
+</ion-content>

@@ -1,0 +1,7 @@
+{
+  "name": "Rendu_Tp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
