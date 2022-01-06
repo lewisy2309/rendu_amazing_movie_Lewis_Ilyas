@@ -11,7 +11,9 @@ export class MoviesPage implements OnInit {
 
   results;
 
+  resultSearch;
 
+  research ='';
   constructor(private movieService: MovieService) { }
 
   ngOnInit() {
@@ -23,6 +25,13 @@ export class MoviesPage implements OnInit {
     this.movieService.getMovies().subscribe((results)=>{
       console.log(results.results);
       this.results = results.results;
+    });
+  }
+
+  searchChange(){
+    this.movieService.searchData(this.research).subscribe((results)=>{
+        console.log(results.results);
+        this.results=results.results;
     });
   }
 

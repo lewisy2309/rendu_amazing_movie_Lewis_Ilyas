@@ -25,4 +25,11 @@ export class MovieService {
     return this.http.get(`${this.url}3/movie/${id}?api_key=${this.apikey}`);
   }
 
+  searchData(title: string): Observable<any> {
+    if (title!=null){
+    return this.http.get(`${this.url}3/search/movie?api_key=${this.apikey}&language=en-US&query=${title}`);
+    } else {
+      this.getMovies();
+    }
+  }
 }
