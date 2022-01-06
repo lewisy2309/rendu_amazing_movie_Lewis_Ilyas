@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { MovieService } from 'src/app/services/movie.service';
 
 @Component({
@@ -9,11 +9,15 @@ import { MovieService } from 'src/app/services/movie.service';
 })
 export class MoviesPage implements OnInit {
 
-  results;
+  results: Observable<any>;
 
   resultSearch;
 
   research ='';
+
+  resultSubscribe;
+
+  filter='';
   constructor(private movieService: MovieService) { }
 
   ngOnInit() {
@@ -22,7 +26,7 @@ export class MoviesPage implements OnInit {
   }
 
   getMovies(){
-    this.movieService.getMovies().subscribe((results)=>{
+      this.resultSubscribe=this.movieService.getMovies().subscribe((results)=>{
       console.log(results.results);
       this.results = results.results;
     });
@@ -33,6 +37,21 @@ export class MoviesPage implements OnInit {
         console.log(results.results);
         this.results=results.results;
     });
+  }
+
+  filterMovie(){
+    this.movieService.filterData(this.filter).subscribe((results)=>{
+      console.log(results);
+      if(this.filter!=='latest'){
+        this.results=results.results;
+      }else{
+        this.results=results;
+      }
+  });
+  }
+
+  ionViewDidLeave() {
+    this.resultSubscribe.unsubscribe();
   }
 
 }
