@@ -1,28 +1,51 @@
 <ion-header>
-  <ion-toolbar color="primary">
-    <ion-title>AmazingMovie</ion-title>
+  <ion-toolbar>
+    <ion-icon slot="start" name="home-outline"></ion-icon>
+    <ion-title>Accueil</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-  <ion-searchbar [(ngModel)]="research" (ionChange)="searchChange($event)"></ion-searchbar>
-  <ion-item>
-    <ion-label>Filter</ion-label>
-    <ion-select [(ngModel)]="filter" (ionChange)="filterMovie($event)">
-      <ion-select-option value="popular">All</ion-select-option>
-      <ion-select-option value="top_rated">Les mieux notés</ion-select-option>
-      <ion-select-option value="upcoming">Films à venir</ion-select-option>
-    </ion-select>
-  </ion-item>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="8">
+        <ion-searchbar [(ngModel)]="research" (ionChange)="searchChange($event)"></ion-searchbar>
+        <ion-list>
+          <ion-item button *ngFor="let item of resultSearch "  [routerLink]="result.id">
 
+          <ion-label text-wrap>
+            <h3>{{ item.title }}</h3>
+            {{ item.year }}
+          </ion-label>
 
-  <ion-content>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+      <ion-col size="4">
+        <ion-item>
+          <ion-label>Filter</ion-label>
+          <ion-select [(ngModel)]="filter" (ionChange)="filterMovie($event)">
+            <ion-select-option value="popular">Tous les Films</ion-select-option>
+            <ion-select-option value="top_rated">Les mieux notés</ion-select-option>
+            <ion-select-option value="upcoming">Films à venir</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-content class="card-back-movies">
     <ion-list>
-      <ion-item ion-item *ngFor="let result of results ">
-        {{ result.title}}
+        <ion-card *ngFor="let result of results" [routerLink]="result.id">
+          <img src="https://image.tmdb.org/t/p/w400/{{result.poster_path}}"/>
+          <div class="black-filter"></div>
+          <div class="info-card-movie">
+            <strong class="title-movie">{{result.title}}</strong>
+            <p class="reviews-movie">{{result.vote_count}} avis</p>
+            <p class="duration-movie">{{result.runtime}} min</p>
+          </div>
+        </ion-card>
 
-        <ion-button [routerLink]="result.id" >détail</ion-button>
-      </ion-item >
     </ion-list>
 
     </ion-content>

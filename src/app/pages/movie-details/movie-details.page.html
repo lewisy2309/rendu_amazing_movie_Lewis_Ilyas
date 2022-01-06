@@ -22,11 +22,21 @@
   </ion-card-header>
   <ion-card-content>
     <img src="https://image.tmdb.org/t/p/w500/{{information.poster_path}}" class="info-img">
+<<<<<<< HEAD
+    {{ information.plot }}
+    <ion-item>
+      <ion-icon name="star-half" slot="start"></ion-icon>
+      <ion-label text-wrap> {{ information.director }} </ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="contacts" slot="start"></ion-icon>
+=======
     {{ information.runtime }} minutes
     <ion-item lines="none">
       <ion-label text-wrap> {{ information.director }} </ion-label>
     </ion-item>
     <ion-item lines="none">
+>>>>>>> 8ae1617a8e2d3f6f30b8ef1d81a21751846b84cf
       <ion-label text-wrap> {{ information.actors }} </ion-label>
     </ion-item>
     <ion-item lines="none" *ngFor="let genre of information.genres ">

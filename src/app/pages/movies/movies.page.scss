@@ -1,0 +1,38 @@
+.card-back-movies
+{
+    ion-card {
+        position: relative;
+    }
+    .black-filter
+    {
+        position: absolute; 
+        top: 0%; 
+        left: 0%; 
+        height: 100%; 
+        width: 100%; 
+        background-color: rgba(0, 0, 0, 0.19);
+    }
+    .info-card-movie
+    {
+        position: absolute;
+        bottom: 5%;
+        left: 5%;
+        right: 10%;
+        color: white;
+    }
+    .title-movie
+    {
+        font-size: 1.5em;
+        font: 900;
+    }
+    .reviews-movie
+    {
+        margin-top: 7px;
+        font-weight: 700;
+    }
+    .duration-movie
+    {
+        margin-top: -5px;
+        font-weight: 700;
+    }
+}
