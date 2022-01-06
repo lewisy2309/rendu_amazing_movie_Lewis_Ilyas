@@ -6,16 +6,14 @@
 
 <ion-content padding>
   <ion-searchbar [(ngModel)]="research" (ionChange)="searchChange($event)"></ion-searchbar>
-  <ion-list>
-    <ion-item button *ngFor="let item of resultSearch "  [routerLink]="result.id">
-
-    <ion-label text-wrap>
-      <h3>{{ item.title }}</h3>
-      {{ item.year }}
-    </ion-label>
-
-    </ion-item>
-  </ion-list>
+  <ion-item>
+    <ion-label>Filter</ion-label>
+    <ion-select [(ngModel)]="filter" (ionChange)="filterMovie($event)">
+      <ion-select-option value="popular">All</ion-select-option>
+      <ion-select-option value="top_rated">Les mieux notés</ion-select-option>
+      <ion-select-option value="upcoming">Films à venir</ion-select-option>
+    </ion-select>
+  </ion-item>
 
 
   <ion-content>

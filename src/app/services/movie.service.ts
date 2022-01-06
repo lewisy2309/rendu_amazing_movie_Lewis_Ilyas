@@ -32,4 +32,12 @@ export class MovieService {
       this.getMovies();
     }
   }
+
+  filterData(filter: string): Observable<any> {
+    if (filter){
+    return this.http.get(`${this.url}3/movie/${filter}?api_key=${this.apikey}`);
+    } else {
+      this.getMovies();
+    }
+  }
 }
