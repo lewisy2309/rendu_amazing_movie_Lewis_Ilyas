@@ -3,6 +3,16 @@
 
 /** Ionic CSS Variables **/
 :root {
+  ion-header {
+    ion-toolbar {
+      // set background color
+      --background: #015746;
+      // set icon/text color
+      --color: #ffffff;
+    }
+  }
+  // dd
+  --ion-color-darkgreen: #015746;
   /** primary **/
   --ion-color-primary: #3880ff;
   --ion-color-primary-rgb: 56, 128, 255;
