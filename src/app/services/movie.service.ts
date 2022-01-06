@@ -16,8 +16,11 @@ export class MovieService {
   constructor(private http: HttpClient) { }
 
 
-  getMovies(): Observable<any>{
-    return this.http.get(`${this.url}3/movie/popular?api_key=${this.apikey}`);
+  getMovies(page?: number): Observable<any>{
+    if(!page){
+      page=1;
+    }
+    return this.http.get(`${this.url}3/movie/popular?api_key=${this.apikey}&page=${page}`);
 
   }
 

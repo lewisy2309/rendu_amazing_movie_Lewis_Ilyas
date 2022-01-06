@@ -34,9 +34,9 @@
     </ion-row>
   </ion-grid>
 
-  <ion-content class="card-back-movies">
+  <ion-item class="card-back-movies">
     <ion-list>
-        <ion-card *ngFor="let result of results" [routerLink]="result.id">
+        <ion-card *ngFor="let result of results | async" [routerLink]="result.id">
           <img src="https://image.tmdb.org/t/p/w400/{{result.poster_path}}"/>
           <div class="black-filter"></div>
           <div class="info-card-movie">
@@ -47,5 +47,14 @@
 
     </ion-list>
 
-    </ion-content>
+    </ion-item>
+    <ion-infinite-scroll threshold="100px" (ionInfinite)="loadMovies($event)">
+      <ion-infinite-scroll-content
+        loadingSpinner="bubbles"
+        loadingText="Loading more data..."
+      >
+      </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
 </ion-content>
+
+
