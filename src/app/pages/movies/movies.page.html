@@ -5,6 +5,18 @@
 </ion-header>
 
 <ion-content padding>
+  <ion-searchbar [(ngModel)]="research" (ionChange)="searchChange($event)"></ion-searchbar>
+  <ion-list>
+    <ion-item button *ngFor="let item of resultSearch "  [routerLink]="result.id">
+
+    <ion-label text-wrap>
+      <h3>{{ item.title }}</h3>
+      {{ item.year }}
+    </ion-label>
+
+    </ion-item>
+  </ion-list>
+
 
   <ion-content>
     <ion-list>
