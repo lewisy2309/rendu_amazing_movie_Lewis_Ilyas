@@ -11,8 +11,6 @@ export class MoviesPage implements OnInit {
 
   results: Observable<Array<any>>;
 
-  resultSearch;
-
   research ='';
 
   resultSubscribe;

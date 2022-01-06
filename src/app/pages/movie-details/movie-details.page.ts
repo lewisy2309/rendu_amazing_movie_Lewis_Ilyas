@@ -22,14 +22,4 @@ export class MovieDetailsPage implements OnInit {
       this.information =result;
     });
   }
-  openWebsite() {
-    window.open(this.information.Website, '_blank');
-
-  }
-
-  // test(name: string)
-  // {
-  //   return "HELLO " + name + " !!"
-  // }
-
 }

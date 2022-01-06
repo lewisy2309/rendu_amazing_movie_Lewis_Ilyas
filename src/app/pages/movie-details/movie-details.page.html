@@ -8,12 +8,10 @@
 </ion-header>
 
 <ion-content padding class="body">
- <!-- {{information}}
 
- {{information.title}} -->
   <ion-card *ngIf="information" class="card">
   <ion-card-content>
-    
+
     <ion-grid>
       <ion-row>
         <ion-col size="6">
@@ -23,26 +21,16 @@
           <p class="bold">{{information.vote_count}} avis</p>
           <p>Sorti le {{ information.release_date }}</p>
           <p class="bold">{{ information.runtime }} minutes</p>
-          <!-- <ion-item lines="none" *ngFor="let spoken_languages of information.spoken_languages ">
-            {{ spoken_languages.name }}
-          </ion-item> -->
-        </ion-col>    
+
+        </ion-col>
       </ion-row>
     </ion-grid>
 
     <ion-card-title class="movie-title">
       {{ information.title }}
     </ion-card-title>
-    
-    <!-- <ion-item lines="none">
-      <ion-label text-wrap> {{ information.director }} </ion-label>
-    </ion-item>
-    <ion-item lines="none">
-      <ion-label text-wrap> {{ information.actors }} </ion-label>
-    </ion-item>
-    <ion-item lines="none" *ngFor="let genre of information.genres ">
-      <ion-label text-wrap> {{ genre.name }} </ion-label>
-    </ion-item> -->
+
+
     <ion-grid>
       <ion-row>
         <ion-col size="4">
@@ -55,12 +43,6 @@
         </ion-col>
       </ion-row>
     </ion-grid>
-
-
-    <!-- <ion-button expand="full" (click)="openWebsite()"
-    *ngIf="information.Website && information.Website != 'N/A'">
-      open Website
-    </ion-button> -->
 
   </ion-card-content>
 
