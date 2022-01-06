@@ -1,0 +1,22 @@
+.content-box
+{
+    padding: 0px 25px 0px 25px;
+    .welcome-txt
+    {
+        font-size: 18px;
+    }
+    .slogan-txt
+    {
+        margin-top: -15px;
+        font-weight: 900;
+        color: #015746;
+    }
+}
+.discover-btn
+{
+    position: absolute;
+    background-color: black !important;
+    bottom: 0px;
+    width: 100%;
+    border-radius: 0px !important;
+}

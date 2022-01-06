@@ -1,5 +1,27 @@
-.info-img{
-    max-height: 30vh;
-    object-fit: contain;
-    padding: 10px;
+.body
+{
+    --ion-background-color: rgb(0, 0, 0) !important;
+}
+*
+{
+    color: white;
+}
+.movie-cover
+{
+    background-size: cover; 
+    height: 200px; 
+    width: 100%; 
+}
+ion-card-content
+{
+    padding: 0 !important;
+    border: none !important;
+}
+.bold
+{
+    font-weight: bold;
+}
+.movie-title
+{
+    color: #AAFFB8;
 }

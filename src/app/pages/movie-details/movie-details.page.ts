@@ -27,4 +27,9 @@ export class MovieDetailsPage implements OnInit {
 
   }
 
+  // test(name: string)
+  // {
+  //   return "HELLO " + name + " !!"
+  // }
+
 }
